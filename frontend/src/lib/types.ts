@@ -98,3 +98,29 @@ export interface UpdateUserRequest {
   nickname?: string
   locale?: string
 }
+
+// Payment
+export interface PlanInfo {
+  key: string
+  name_zh: string
+  name_en: string
+  points: number
+  price_cents: number
+  price_label: string
+}
+
+export interface CreatePaymentResponse {
+  order_id: string
+  code_url: string
+  expires_at: string
+}
+
+export interface PaymentStatusResponse {
+  order_id: string
+  status: 'pending' | 'paid' | 'expired' | 'failed'
+  plan: string
+  points: number
+  amount_cents: number
+  paid_at: string | null
+  created_at: string
+}

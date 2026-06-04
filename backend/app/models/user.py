@@ -34,3 +34,6 @@ class User(Base):
     point_transactions: Mapped[list["PointTransaction"]] = relationship(
         back_populates="user", lazy="selectin"
     )
+    payment_orders: Mapped[list["PaymentOrder"]] = relationship(
+        back_populates="user", lazy="selectin"
+    )

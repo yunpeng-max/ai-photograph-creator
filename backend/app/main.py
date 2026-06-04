@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 
 from app.config import get_settings
-from app.routers import auth, generate, points, options
+from app.routers import auth, generate, points, options, payment
 
 settings = get_settings()
 
@@ -25,6 +25,7 @@ app.include_router(auth.router, prefix="/api/v1")
 app.include_router(generate.router, prefix="/api/v1")
 app.include_router(points.router, prefix="/api/v1")
 app.include_router(options.router, prefix="/api/v1")
+app.include_router(payment.router, prefix="/api/v1")
 
 # Serve uploaded images as static files
 upload_dir = Path(settings.upload_dir).resolve()

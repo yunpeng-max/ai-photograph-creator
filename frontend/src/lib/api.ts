@@ -5,6 +5,9 @@ import type {
   GenerationListResponse,
   FormOptions,
   PointsResponse,
+  PlanInfo,
+  CreatePaymentResponse,
+  PaymentStatusResponse,
 } from './types'
 
 const API_BASE = '/api/v1'
@@ -104,11 +107,21 @@ export const api = {
     request<PointsResponse>('/points', { auth: true }),
 
   purchasePoints: (plan: string) =>
-    request<{ message: string }>('/points/purchase', {
+    request<CreatePaymentResponse>('/points/purchase', {
       method: 'POST',
       body: { plan },
       auth: true,
     }),
+
+  // Payment
+  getPlans: () =>
+    request<{ plans: PlanInfo[] }>('/payment/plans'),
+
+  getQrCode: () =>
+    request<{ qr_url: string }>('/payment/qr'),
+
+  getPaymentStatus: (orderId: string) =>
+    request<PaymentStatusResponse>(`/payment/status/${orderId}`, { auth: true }),
 
   // Options
   getOptions: () =>

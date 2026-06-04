@@ -1,13 +1,13 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select
 
 from app.database import get_db
 from app.dependencies import get_current_user
 from app.models.user import User
-from app.models.point_transaction import PointTransaction
-from app.schemas.points import PointsResponse, TransactionResponse, PurchaseRequest
+from app.schemas.points import PointsResponse, TransactionResponse
+from app.schemas.payment import CreatePaymentRequest, CreatePaymentResponse
 from app.services.points_service import get_user_transactions
+from app.services.payment_service import create_order
 
 router = APIRouter(prefix="/points", tags=["points"])
 
@@ -35,9 +35,14 @@ async def get_points(
     )
 
 
-@router.post("/purchase")
+@router.post("/purchase", response_model=CreatePaymentResponse)
 async def purchase_points(
-    body: PurchaseRequest,
+    body: CreatePaymentRequest,
     current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
 ):
-    return {"message": "Payment not yet available"}
+    """Create a recharge order. Admin will verify manually."""
+    try:
+        return await create_order(db, current_user, body)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc))

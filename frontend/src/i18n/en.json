@@ -112,25 +112,25 @@
     },
     "upgrade": {
       "title": "Insufficient Points",
-      "message": "Generating an image requires 1 point. Your current balance is 0.",
+      "message": "Generating an image requires 1 point. Please top up to continue.",
+      "purchase": "Purchase Now",
       "plans": {
         "basic": {
           "name": "Basic",
           "points": "20 points",
-          "price": "$5"
+          "price": "¥5.00"
         },
         "pro": {
           "name": "Pro",
           "points": "50 points",
-          "price": "$10"
+          "price": "¥10.00"
         },
         "premium": {
           "name": "Premium",
           "points": "200 points",
-          "price": "$15"
+          "price": "¥15.00"
         }
       },
-      "comingSoon": "Coming Soon",
       "dismiss": "Not Now"
     },
     "history": {
@@ -153,8 +153,28 @@
       "reasons": {
         "registration_bonus": "Registration Bonus",
         "generation_cost": "Generation Cost",
-        "generation_refund": "Generation Refund"
+        "generation_refund": "Generation Refund",
+        "purchase_basic": "Basic Plan Purchase",
+        "purchase_pro": "Pro Plan Purchase",
+        "purchase_premium": "Premium Plan Purchase"
       }
+    },
+    "recharge": {
+      "title": "Recharge Points",
+      "selectPlan": "Select a plan",
+      "scanToPay": "Scan the QR code with WeChat to pay",
+      "planInfo": "Plan: {{plan}}, Amount: {{amount}}",
+      "noQrCode": "Admin has not uploaded a QR code yet",
+      "iHavePaid": "I've Paid",
+      "cancel": "Cancel",
+      "waitingTitle": "Awaiting Confirmation",
+      "waitingMessage": "Admin is verifying your payment, please wait...",
+      "success": "Payment Successful!",
+      "rejected": "Payment Rejected",
+      "retry": "Try Again",
+      "backToPlans": "Back to Plans",
+      "polling": "Waiting for confirmation...",
+      "pointsAwarded": "points awarded"
     },
     "errors": {
       "insufficientPoints": "Insufficient points. Please upgrade and try again.",

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Image, Crop, Palette, MapPin, Layout, Sparkles, CheckCircle, X, ZoomIn } from "lucide-react";
 import { api } from "../lib/api";
@@ -35,6 +36,7 @@ const defaultForm: FormData = {
 
 export default function HomePage() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const { updateBalance } = useAuth();
   const [form, setForm] = useState<FormData>(defaultForm);
   const [options, setOptions] = useState<FormOptions | null>(null);
@@ -266,7 +268,7 @@ export default function HomePage() {
                 <span className="font-medium text-text-primary">{t(`upgrade.plans.${plan}.points`)}</span>
                 <span className="text-accent-400 font-bold">{t(`upgrade.plans.${plan}.price`)}</span>
               </div>
-              <Button variant="ghost" size="sm" disabled className="w-full mt-2">{t("upgrade.comingSoon")}</Button>
+              <Button variant="primary" size="sm" className="w-full mt-2" onClick={() => { setShowUpgrade(false); navigate(`/recharge?plan=${plan}`); }}>{t("upgrade.purchase")}</Button>
             </div>
           ))}
         </div>

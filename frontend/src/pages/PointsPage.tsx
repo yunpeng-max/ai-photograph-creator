@@ -1,8 +1,10 @@
 import { useEffect, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { Coins, ArrowUpRight, ArrowDownLeft, ReceiptText } from "lucide-react";
+import { Coins, ArrowUpRight, ArrowDownLeft, ReceiptText, Plus } from "lucide-react";
 import { api } from "../lib/api";
 import { Card } from "../components/ui/Card";
+import { Button } from "../components/ui/Button";
 import { Skeleton } from "../components/ui/Skeleton";
 import { cn } from "../lib/utils";
 import type { PointTransaction } from "../lib/types";
@@ -30,6 +32,7 @@ function AnimatedBalance({ target }: { target: number }) {
 
 export default function PointsPage() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [balance, setBalance] = useState(0);
   const [transactions, setTransactions] = useState<PointTransaction[]>([]);
   const [loading, setLoading] = useState(true);
@@ -70,6 +73,15 @@ export default function PointsPage() {
             </div>
             <div className="text-white"><AnimatedBalance target={balance} /></div>
             <p className="text-accent-200 text-sm mt-1">points</p>
+            <Button
+              variant="primary"
+              size="sm"
+              leftIcon={<Plus size={16} />}
+              className="mt-4 !bg-white/20 hover:!bg-white/30 !text-white border-white/20"
+              onClick={() => navigate("/recharge")}
+            >
+              {t("points.purchase")}
+            </Button>
           </div>
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-1/2 w-48 h-48 bg-white/5 rounded-full translate-y-1/2" />

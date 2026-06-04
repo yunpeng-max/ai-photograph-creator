@@ -11,6 +11,7 @@ import RegisterPage from "./pages/RegisterPage";
 import HomePage from "./pages/HomePage";
 import HistoryPage from "./pages/HistoryPage";
 import PointsPage from "./pages/PointsPage";
+import RechargePage from "./pages/RechargePage";
 
 function PrivateRoute() {
   const { user, isLoading } = useAuth();
@@ -49,6 +50,7 @@ function AppContent() {
             <Route index element={<HomePage />} />
             <Route path="history" element={<HistoryPage />} />
             <Route path="points" element={<PointsPage />} />
+            <Route path="recharge" element={<RechargePage />} />
           </Route>
         </Route>
       </Routes>

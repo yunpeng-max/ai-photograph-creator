@@ -112,25 +112,25 @@
     },
     "upgrade": {
       "title": "积分不足",
-      "message": "生成图片需要 1 个积分，您当前积分为 0",
+      "message": "生成图片需要 1 个积分，请充值获取更多积分",
+      "purchase": "立即购买",
       "plans": {
         "basic": {
           "name": "基础版",
           "points": "20 积分",
-          "price": "$5"
+          "price": "¥5.00"
         },
         "pro": {
           "name": "专业版",
           "points": "50 积分",
-          "price": "$10"
+          "price": "¥10.00"
         },
         "premium": {
           "name": "高级版",
           "points": "200 积分",
-          "price": "$15"
+          "price": "¥15.00"
         }
       },
-      "comingSoon": "即将上线",
       "dismiss": "暂不升级"
     },
     "history": {
@@ -153,8 +153,28 @@
       "reasons": {
         "registration_bonus": "注册奖励",
         "generation_cost": "生成消耗",
-        "generation_refund": "生成退款"
+        "generation_refund": "生成退款",
+        "purchase_basic": "购买基础套餐",
+        "purchase_pro": "购买专业套餐",
+        "purchase_premium": "购买高级套餐"
       }
+    },
+    "recharge": {
+      "title": "积分充值",
+      "selectPlan": "选择充值方案",
+      "scanToPay": "请使用微信扫描二维码支付",
+      "planInfo": "方案：{{plan}}，金额：{{amount}}",
+      "noQrCode": "管理员尚未上传收款码",
+      "iHavePaid": "我已完成支付",
+      "cancel": "取消支付",
+      "waitingTitle": "等待确认",
+      "waitingMessage": "管理员正在核实您的付款，请稍候...",
+      "success": "支付成功！",
+      "rejected": "支付未通过",
+      "retry": "重新支付",
+      "backToPlans": "返回选择方案",
+      "polling": "等待确认中...",
+      "pointsAwarded": "获得积分"
     },
     "errors": {
       "insufficientPoints": "积分不足，请升级后再试",

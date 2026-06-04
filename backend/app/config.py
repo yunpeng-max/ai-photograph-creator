@@ -31,6 +31,10 @@ class Settings(BaseSettings):
     # Uploads
     upload_dir: str = "/app/uploads"
 
+    # WeChat Pay (personal QR code mode)
+    wechat_qr_url: str = ""  # URL or path to your personal WeChat payment QR code image
+    admin_token: str = ""  # token for admin to approve/reject payments
+
     @property
     def allowed_origins_list(self) -> list[str]:
         return [o.strip() for o in self.allowed_origins.split(",") if o.strip()]
