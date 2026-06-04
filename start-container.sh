@@ -27,15 +27,9 @@ fi
 NGINX_PORT="${PORT:-80}"
 echo "[Nginx] Using port: ${NGINX_PORT}"
 
-if command -v envsubst &> /dev/null; then
-    envsubst '${NGINX_PORT}' < /etc/nginx/nginx.conf.template > /etc/nginx/conf.d/default.conf
-    echo "[Nginx] Config generated via envsubst"
-else
-    # 备选方案：用 sed 替换
-    cp /etc/nginx/nginx.conf.template /etc/nginx/conf.d/default.conf
-    sed -i "s/\${NGINX_PORT:-80}/${NGINX_PORT}/g" /etc/nginx/conf.d/default.conf
-    echo "[Nginx] Config generated via sed (envsubst not available)"
-fi
+# 直接用 sed 替换（比 envsubst 更可靠）
+cp /etc/nginx/nginx.conf.template /etc/nginx/conf.d/default.conf
+sed -i "s/\${NGINX_PORT}/${NGINX_PORT}/g" /etc/nginx/conf.d/default.conf
 
 echo "[Nginx] First lines of config:"
 head -3 /etc/nginx/conf.d/default.conf
