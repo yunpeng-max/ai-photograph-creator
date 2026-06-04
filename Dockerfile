@@ -20,6 +20,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y \
     libjpeg-dev \
     nginx \
+    gettext-base \
     && rm -f /etc/nginx/sites-enabled/default \
     && rm -rf /var/www/html \
     && rm -rf /var/lib/apt/lists/*
