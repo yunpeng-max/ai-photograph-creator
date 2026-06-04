@@ -1,6 +1,6 @@
 # Nginx config template — PORT is substituted on startup
 server {
-    listen ${NGINX_PORT:-80};
+    listen ${NGINX_PORT};
     server_name _;
 
     root /usr/share/nginx/html;
