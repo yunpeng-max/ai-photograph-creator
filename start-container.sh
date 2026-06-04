@@ -17,7 +17,13 @@ else
     echo "[DB] WARNING: DATABASE_URL not set!"
 fi
 
-# ── 2. 自动添加 Railway 域名到 CORS 白名单 ──────
+# ── 2. 运行数据库迁移 ────────────────────────
+echo "[DB] Running alembic migrations..."
+cd /app
+alembic upgrade head
+echo "[DB] Migrations complete."
+
+# ── 3. 自动添加 Railway 域名到 CORS 白名单 ──────
 if [ -n "$RAILWAY_PUBLIC_DOMAIN" ]; then
     export ALLOWED_ORIGINS="https://${RAILWAY_PUBLIC_DOMAIN},${ALLOWED_ORIGINS}"
     echo "[CORS] Added: https://${RAILWAY_PUBLIC_DOMAIN}"
