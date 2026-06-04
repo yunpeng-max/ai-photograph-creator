@@ -1,0 +1,4 @@
+终端输入
+cd /Users/li/VSCode/AI_Photograph_Creatoer
+  chmod +x start.sh
+  ./start.sh

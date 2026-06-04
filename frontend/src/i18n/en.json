@@ -1,0 +1,166 @@
+{
+  "translation": {
+    "common": {
+      "loading": "Loading...",
+      "error": "Error",
+      "success": "Success",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "save": "Save",
+      "delete": "Delete",
+      "edit": "Edit",
+      "submit": "Submit",
+      "back": "Back",
+      "next": "Next",
+      "previous": "Previous"
+    },
+    "auth": {
+      "login": "Log In",
+      "register": "Sign Up",
+      "logout": "Log Out",
+      "email": "Email",
+      "password": "Password",
+      "nickname": "Nickname",
+      "loginTitle": "Welcome Back",
+      "registerTitle": "Create Account",
+      "noAccount": "No account?",
+      "hasAccount": "Already have an account?",
+      "loginNow": "Log In",
+      "registerNow": "Sign Up",
+      "emailPlaceholder": "Enter your email",
+      "passwordPlaceholder": "Enter your password",
+      "nicknamePlaceholder": "Enter your nickname",
+      "passwordConfirm": "Confirm Password",
+      "passwordConfirmPlaceholder": "Enter password again",
+      "passwordMismatch": "Passwords do not match"
+    },
+    "nav": {
+      "home": "Home",
+      "history": "History",
+      "points": "Points",
+      "profile": "Profile"
+    },
+    "home": {
+      "title": "AI Image Generator",
+      "subtitle": "Structured form, professional prompts, high-quality results",
+      "imageType": "Image Type",
+      "aspectRatio": "Aspect Ratio",
+      "style": "Style",
+      "scene": "Scene",
+      "whitespace": "Whitespace",
+      "subject": "Subject",
+      "subjectPlaceholder": "Describe the main subject you want to generate...",
+      "additionalRequirements": "Additional Requirements",
+      "additionalRequirementsPlaceholder": "Optional: Any other special requirements...",
+      "generate": "Generate",
+      "generating": "Generating...",
+      "cost": "1 point",
+      "balance": "Balance",
+      "result": "Result"
+    },
+    "imageTypes": {
+      "product_photo": "Product Photo",
+      "portrait": "Portrait",
+      "landscape": "Landscape",
+      "illustration": "Illustration",
+      "food_photo": "Food Photo",
+      "social_media": "Social Media",
+      "architecture": "Architecture",
+      "abstract": "Abstract Art",
+      "logo": "Logo Design",
+      "concept_art": "Concept Art"
+    },
+    "aspectRatios": {
+      "1:1": "1:1 Square",
+      "4:3": "4:3 Landscape",
+      "3:4": "3:4 Portrait",
+      "16:9": "16:9 Widescreen",
+      "9:16": "9:16 Phone",
+      "3:2": "3:2 Classic",
+      "2:3": "2:3 Portrait"
+    },
+    "styles": {
+      "realistic": "Realistic",
+      "minimalist": "Minimalist",
+      "vibrant": "Vibrant",
+      "dark_moody": "Dark & Moody",
+      "vintage": "Vintage",
+      "modern": "Modern",
+      "artistic": "Artistic",
+      "cartoon": "Cartoon",
+      "watercolor": "Watercolor",
+      "cyberpunk": "Cyberpunk",
+      "japanese_zen": "Japanese Zen"
+    },
+    "scenes": {
+      "studio": "Studio",
+      "outdoor_nature": "Outdoor Nature",
+      "urban": "Urban",
+      "indoor_home": "Indoor Home",
+      "beach": "Beach",
+      "mountain": "Mountain",
+      "night_city": "Night City",
+      "abstract_bg": "Abstract Background",
+      "office": "Office",
+      "forest": "Forest"
+    },
+    "whitespaces": {
+      "none": "No Whitespace",
+      "some": "Some",
+      "moderate": "Moderate",
+      "generous": "Generous"
+    },
+    "upgrade": {
+      "title": "Insufficient Points",
+      "message": "Generating an image requires 1 point. Your current balance is 0.",
+      "plans": {
+        "basic": {
+          "name": "Basic",
+          "points": "20 points",
+          "price": "$5"
+        },
+        "pro": {
+          "name": "Pro",
+          "points": "50 points",
+          "price": "$10"
+        },
+        "premium": {
+          "name": "Premium",
+          "points": "200 points",
+          "price": "$15"
+        }
+      },
+      "comingSoon": "Coming Soon",
+      "dismiss": "Not Now"
+    },
+    "history": {
+      "title": "Generation History",
+      "empty": "No generations yet",
+      "download": "Download",
+      "regenerate": "Regenerate",
+      "status": {
+        "pending": "Generating",
+        "completed": "Completed",
+        "failed": "Failed"
+      }
+    },
+    "points": {
+      "title": "Points Management",
+      "currentBalance": "Current Balance",
+      "transactions": "Transaction History",
+      "noTransactions": "No transactions yet",
+      "purchase": "Purchase Points",
+      "reasons": {
+        "registration_bonus": "Registration Bonus",
+        "generation_cost": "Generation Cost",
+        "generation_refund": "Generation Refund"
+      }
+    },
+    "errors": {
+      "insufficientPoints": "Insufficient points. Please upgrade and try again.",
+      "networkError": "Network error. Please try again.",
+      "unauthorized": "Please log in first.",
+      "generationFailed": "Generation failed. Points have been refunded."
+    }
+  }
+}

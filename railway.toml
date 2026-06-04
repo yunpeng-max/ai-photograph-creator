@@ -1,0 +1,11 @@
+# ============================================
+# Railway 部署配置
+# 连接 GitHub 后 Railway 会自动读取此文件
+# ============================================
+
+[build]
+dockerfilePath = "Dockerfile"
+
+[deploy]
+numReplicas = 1
+restartPolicyType = "ON_FAILURE"

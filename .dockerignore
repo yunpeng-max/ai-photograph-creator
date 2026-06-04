@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+*.egg-info/
+
+# Node
+node_modules/
+frontend/node_modules/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.local
+backend/.env
+
+# Git
+.git/
+.gitignore
+
+# Uploads (dev)
+uploads/
+backend/uploads/
+
+# Scripts
+Start.command
+
+# Docs
+项目详解/
+*.text

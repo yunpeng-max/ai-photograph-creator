@@ -1,0 +1,166 @@
+{
+  "translation": {
+    "common": {
+      "loading": "加载中...",
+      "error": "错误",
+      "success": "成功",
+      "cancel": "取消",
+      "confirm": "确认",
+      "save": "保存",
+      "delete": "删除",
+      "edit": "编辑",
+      "submit": "提交",
+      "back": "返回",
+      "next": "下一步",
+      "previous": "上一步"
+    },
+    "auth": {
+      "login": "登录",
+      "register": "注册",
+      "logout": "退出登录",
+      "email": "邮箱",
+      "password": "密码",
+      "nickname": "昵称",
+      "loginTitle": "欢迎回来",
+      "registerTitle": "创建账户",
+      "noAccount": "没有账户？",
+      "hasAccount": "已有账户？",
+      "loginNow": "立即登录",
+      "registerNow": "立即注册",
+      "emailPlaceholder": "请输入邮箱",
+      "passwordPlaceholder": "请输入密码",
+      "nicknamePlaceholder": "请输入昵称",
+      "passwordConfirm": "确认密码",
+      "passwordConfirmPlaceholder": "请再次输入密码",
+      "passwordMismatch": "两次输入的密码不一致"
+    },
+    "nav": {
+      "home": "首页",
+      "history": "生成历史",
+      "points": "积分",
+      "profile": "个人资料"
+    },
+    "home": {
+      "title": "AI 图片生成",
+      "subtitle": "结构化表单，专业级提示词，高质量生成",
+      "imageType": "图片类型",
+      "aspectRatio": "画面比例",
+      "style": "风格",
+      "scene": "场景",
+      "whitespace": "留白",
+      "subject": "主体描述",
+      "subjectPlaceholder": "描述你想要生成的主体内容...",
+      "additionalRequirements": "补充要求",
+      "additionalRequirementsPlaceholder": "选填：任何其他特殊要求...",
+      "generate": "生成图片",
+      "generating": "正在生成中...",
+      "cost": "消耗 1 积分",
+      "balance": "当前积分",
+      "result": "生成结果"
+    },
+    "imageTypes": {
+      "product_photo": "产品摄影",
+      "portrait": "人像摄影",
+      "landscape": "风景摄影",
+      "illustration": "插画",
+      "food_photo": "美食摄影",
+      "social_media": "社交媒体配图",
+      "architecture": "建筑摄影",
+      "abstract": "抽象艺术",
+      "logo": "Logo 设计",
+      "concept_art": "概念艺术"
+    },
+    "aspectRatios": {
+      "1:1": "1:1 正方形",
+      "4:3": "4:3 横版",
+      "3:4": "3:4 竖版",
+      "16:9": "16:9 宽屏",
+      "9:16": "9:16 手机竖屏",
+      "3:2": "3:2 经典",
+      "2:3": "2:3 竖版"
+    },
+    "styles": {
+      "realistic": "写实自然",
+      "minimalist": "极简纯净",
+      "vibrant": "活力鲜艳",
+      "dark_moody": "暗调氛围",
+      "vintage": "复古胶片",
+      "modern": "现代时尚",
+      "artistic": "艺术创意",
+      "cartoon": "卡通插画",
+      "watercolor": "水彩风格",
+      "cyberpunk": "赛博朋克",
+      "japanese_zen": "日式禅意"
+    },
+    "scenes": {
+      "studio": "专业影棚",
+      "outdoor_nature": "户外自然",
+      "urban": "城市街景",
+      "indoor_home": "室内家居",
+      "beach": "海滩",
+      "mountain": "山景",
+      "night_city": "城市夜景",
+      "abstract_bg": "抽象背景",
+      "office": "办公空间",
+      "forest": "森林"
+    },
+    "whitespaces": {
+      "none": "无留白",
+      "some": "少量留白",
+      "moderate": "适中留白",
+      "generous": "大量留白"
+    },
+    "upgrade": {
+      "title": "积分不足",
+      "message": "生成图片需要 1 个积分，您当前积分为 0",
+      "plans": {
+        "basic": {
+          "name": "基础版",
+          "points": "20 积分",
+          "price": "$5"
+        },
+        "pro": {
+          "name": "专业版",
+          "points": "50 积分",
+          "price": "$10"
+        },
+        "premium": {
+          "name": "高级版",
+          "points": "200 积分",
+          "price": "$15"
+        }
+      },
+      "comingSoon": "即将上线",
+      "dismiss": "暂不升级"
+    },
+    "history": {
+      "title": "生成历史",
+      "empty": "暂无生成记录",
+      "download": "下载图片",
+      "regenerate": "重新生成",
+      "status": {
+        "pending": "生成中",
+        "completed": "已完成",
+        "failed": "失败"
+      }
+    },
+    "points": {
+      "title": "积分管理",
+      "currentBalance": "当前积分",
+      "transactions": "积分记录",
+      "noTransactions": "暂无记录",
+      "purchase": "购买积分",
+      "reasons": {
+        "registration_bonus": "注册奖励",
+        "generation_cost": "生成消耗",
+        "generation_refund": "生成退款"
+      }
+    },
+    "errors": {
+      "insufficientPoints": "积分不足，请升级后再试",
+      "networkError": "网络错误，请重试",
+      "unauthorized": "请先登录",
+      "generationFailed": "生成失败，已退还积分"
+    }
+  }
+}
