@@ -1,6 +1,8 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, Header, status
+from pydantic import BaseModel
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.config import get_settings
 from app.database import get_db
 from app.dependencies import get_current_user
 from app.models.user import User
@@ -20,6 +22,19 @@ from app.services.auth_service import (
 )
 
 router = APIRouter(prefix="/auth", tags=["auth"])
+
+
+class ResetPasswordRequest(BaseModel):
+    email: str
+    new_password: str
+
+
+def _verify_admin(x_admin_token: str = Header(default="")) -> None:
+    settings = get_settings()
+    if not settings.admin_token:
+        raise HTTPException(status_code=403, detail="Admin not configured")
+    if x_admin_token != settings.admin_token:
+        raise HTTPException(status_code=401, detail="Invalid admin token")
 
 
 @router.post("/register", response_model=AuthResponse, status_code=status.HTTP_201_CREATED)
@@ -120,3 +135,20 @@ async def update_me(
         points_balance=current_user.points_balance,
         locale=current_user.locale,
     )
+
+
+@router.post("/reset-password")
+async def reset_password(
+    body: ResetPasswordRequest,
+    _: None = Depends(_verify_admin),
+    db: AsyncSession = Depends(get_db),
+):
+    """Reset a user's password (admin only)."""
+    user = await get_user_by_email(db, body.email)
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    user.password_hash = hash_password(body.new_password)
+    await db.commit()
+
+    return {"message": "Password reset successfully"}

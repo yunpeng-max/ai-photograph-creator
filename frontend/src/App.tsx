@@ -12,6 +12,7 @@ import HomePage from "./pages/HomePage";
 import HistoryPage from "./pages/HistoryPage";
 import PointsPage from "./pages/PointsPage";
 import RechargePage from "./pages/RechargePage";
+import AdminPage from "./pages/AdminPage";
 
 function PrivateRoute() {
   const { user, isLoading } = useAuth();
@@ -43,8 +44,7 @@ function AppContent() {
         {/* Public routes */}
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-
-        {/* Protected routes with Layout */}
+        <Route path="/admin" element={<AdminPage />} />
         <Route element={<PrivateRoute />}>
           <Route element={<Layout />}>
             <Route index element={<HomePage />} />
