@@ -32,7 +32,7 @@ class Settings(BaseSettings):
     upload_dir: str = "/app/uploads"
 
     # WeChat Pay (personal QR code mode)
-    wechat_qr_url: str = ""  # URL or path to your personal WeChat payment QR code image
+    wechat_qr_url: str = "/qr-pay.png"  # URL or path to your personal WeChat payment QR code image
     admin_token: str = ""  # token for admin to approve/reject payments
 
     @property
