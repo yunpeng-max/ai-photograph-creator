@@ -33,6 +33,7 @@ COPY backend/ .
 COPY --from=frontend-builder /app/dist /usr/share/nginx/html
 
 # 复制 nginx 配置
+RUN rm -f /etc/nginx/sites-enabled/default
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # 复制启动脚本
