@@ -20,6 +20,8 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y \
     libjpeg-dev \
     nginx \
+    && rm -f /etc/nginx/sites-enabled/default \
+    && rm -rf /var/www/html \
     && rm -rf /var/lib/apt/lists/*
 
 # 安装 Python 依赖
@@ -32,9 +34,8 @@ COPY backend/ .
 # 复制前端构建产物
 COPY --from=frontend-builder /app/dist /usr/share/nginx/html
 
-# 复制 nginx 配置
-RUN rm -f /etc/nginx/sites-enabled/default
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# 复制 nginx 配置（使用模板以支持 Railway 的 PORT 变量）
+COPY nginx.conf.template /etc/nginx/nginx.conf.template
 
 # 复制启动脚本
 COPY start-container.sh /start-container.sh
