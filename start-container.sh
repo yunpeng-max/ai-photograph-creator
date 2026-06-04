@@ -45,11 +45,17 @@ echo "[Backend] PID: $BACKEND_PID"
 sleep 3
 
 # 健康检查
-if curl -s http://127.0.0.1:8000/health > /dev/null 2>&1; then
+HEALTH_RESULT=$(curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:8000/health 2>&1 || echo "curl_failed")
+echo "[Backend] Health check HTTP status: ${HEALTH_RESULT}"
+if [ "${HEALTH_RESULT}" = "200" ]; then
     echo "[Backend] Health check passed!"
 else
-    echo "[Backend] WARNING: Health check failed, but continuing..."
+    echo "[Backend] WARNING: Health check got ${HEALTH_RESULT}"
 fi
+
+# 检查前端文件
+echo "[Frontend] Checking static files..."
+ls -la /usr/share/nginx/html/ | head -5
 
 # ── 5. 启动 nginx ────────────────────────────
 echo "[Frontend] Starting nginx on port ${NGINX_PORT}..."
